@@ -11,7 +11,12 @@ import pickle
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-st.title('Penguin Classifier: A Machine Learning App')
+'''
+[Historyy]
+2021.12.30 Add Password on streamlit app
+'''
+
+st.title('Penguin Classifier: A Machine Learning App V0.1.5')
 st.write("This app uses 6 inputs to predict the species of penguin using "
          "a model built on the Palmer's Penguin's dataset. Use the form below"
          " to get started!")
