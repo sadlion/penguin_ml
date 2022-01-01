@@ -1,5 +1,6 @@
 import streamlit as st
-
+from streamlit_lottie import st_lottie
+import requests
 import pandas as pd
 
 from sklearn.metrics import accuracy_score
@@ -11,10 +12,21 @@ import pickle
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+from pandas_profiling import ProfileReport
+from streamlit_pandas_profiling import st_profile_report
+
 '''
 [Historyy]
 2021.12.30 Add Password on streamlit app
 '''
+def load_lottieurl(url: str):
+    r = requests.get(url)
+    if r.status_code != 200:
+        return None
+    return r.json()
+
+lottie_penguin = load_lottieurl('https://assets9.lottiefiles.com/private_files/lf30_lntyk83o.json')
+st_lottie(lottie_penguin, speed=1.5, width=800, height=400)
 
 st.title('Penguin Classifier: A Machine Learning App V0.1.5:Sadlion')
 st.write("This app uses 6 inputs to predict the species of penguin using "
@@ -110,3 +122,8 @@ ax = sns.displot(x=penguin_df['flipper_length_mm'],hue=penguin_df['species'])
 plt.axvline(flipper_length)
 plt.title('Flipper Length by Species')
 st.pyplot(ax)
+
+
+st.title('Pandas Profiling of Penguin Dataset')
+penguin_profile = ProfileReport(penguin_df, explorative=True)
+st_profile_report(penguin_profile)
