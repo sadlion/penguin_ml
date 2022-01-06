@@ -16,7 +16,7 @@ from pandas_profiling import ProfileReport
 from streamlit_pandas_profiling import st_profile_report
 
 '''
-[Historyy]
+[History]
 2021.12.30 Add Password on streamlit app
 '''
 def load_lottieurl(url: str):
