@@ -28,7 +28,7 @@ def load_lottieurl(url: str):
 lottie_penguin = load_lottieurl('https://assets9.lottiefiles.com/private_files/lf30_lntyk83o.json')
 st_lottie(lottie_penguin, speed=1.5, width=800, height=400)
 
-st.title('Penguin Classifier: A Machine Learning App V0.1.5:Sadlion')
+st.title('Penguin Classifier: A Machine Learning App V0.1.6:Sadlion')
 st.write("This app uses 6 inputs to predict the species of penguin using "
          "a model built on the Palmer's Penguin's dataset. Use the form below"
          " to get started!")
